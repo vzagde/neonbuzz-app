@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>2201</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./assets/stylesheets/demo.css" />
+    <link rel="stylesheet" href="./assets/stylesheets/unsemantic-grid-responsive.css" />
+    <link rel="stylesheet" href="./assets/stylesheets/unsemantic-grid-responsive-tablet.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="menu header padd0 mobile-grid-100">
+            <a href="javascript:void(0);">
+                <img src="images/rotate-menu-btn.png" class="index_menu_click rotate" style="width:6% !important;" alt="" />
+            </a>
+            <img src="images/header-right.png" class="index-right right" alt="" />
+            <input type="text" name="search" class="search" placeholder="seacrh">
+            <ul>
+                <li id="feed-page" onclick="showPage('#feed', feedListCtrlr, {})">feeds</li>
+                <li id="create-feed-page" onclick="showPage('#create-feed', createFeedCtrlr, {})">create feeds</li>
+                <li id="uprofile-page">user profile</li>
+                <li id="offer-page" onclick="showPage('#offer', offerListCtrlr, {})">offer</li>
+                <li id="show-buzz">Buzz</li>
+                <!-- <li id="sharebuzz-page">settings</li> -->
+            </ul>
+<!--             <div class="mobile-grid-100 padd0 menu-btn" style="position: absolute; bottom: 0">
+                <div class="mobile-grid-50 login-btn" id="login-page">login</div>
+                <div class="mobile-grid-50 regis-btn" id="register-page">register</div>
+            </div> -->
+        </div>
+        
+        <div id="home" data-include="home" style="display: block;" class="container main-section"></div>
+        <div id="brand" data-include="brand" style="display: none" class="container main-section"></div>
+        <div id="brand-profile" data-include="brand-profile" style="display: none" class="container main-section"></div>
+        <div id="buzz" data-include="buzz" style="display: none" class="container main-section"></div>
+        <div id="chat" data-include="chat" style="display: none" class="container main-section"></div>
+        <div id="chat2" data-include="chat2" style="display: none" class="container main-section"></div>
+        <div id="create-feed" data-include="create-feed" style="display: none" class="container main-section"></div>
+        <div id="feed" data-include="feed" style="display: none" class="container main-section"></div>
+        <div id="forgot-password" data-include="forgot-password" class="container main-section" style="display: none"></div>
+        <div id="single_buzz" data-include="single_buzz" class="container main-section" style="display: none"></div>
+        <div id="single_feed" data-include="single_feed" class="container main-section" style="display: none"></div>
+        <div id="thankyou" data-include="register" class="container main-section" style="display: none"></div>
+        <div id="login" data-include="login" class="container main-section" style="display: none"></div>
+        <div id="register2" data-include="register2" class="container main-section" style="display: none"></div>
+        <div id="offer" data-include="offer" class="container main-section" style="display: none"></div>
+        <div id="register-shopper" data-include="register-shopper" class="container main-section" style="display: none"></div>
+        <div id="register-buisness" data-include="register-buisness" class="container main-section" style="display: none"></div>
+        <div id="search" data-include="search" class="container main-section" style="display: none"></div>
+        <div id="tutorial" data-include="tutorial" class="container main-section" style="display: none"></div>
+        <div id="user-profile" data-include="user-profile" class="container main-section" style="display: none"></div>
+        <div id="notification-screen" data-include="notification-screen" class="container main-section" style="display: none"></div>
+        <div id="settings-screen" data-include="settings-screen" class="container main-section" style="display: none"></div>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="./assets/javascripts/jquery.js"></script>
+    <script type="text/javascript">
+        $('div[data-include]').each(function() {
+            $(this).load($(this).attr('data-include') + '.html').trigger('create');
+        });
+    </script>
+    <script type="text/javascript" src="http://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="js/openfb.js"></script>
+    <script src="assets/lockr-master/lockr.js" type="text/javascript"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/multiple-select.js"></script>
+    <script src="./assets/javascripts/demo.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

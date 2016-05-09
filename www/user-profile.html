@@ -1,0 +1,113 @@
+
+
+        <div class="header feed-header mobile-grid-100">
+            <img src="images/menu-btn.png" class="menu_click menu-open" alt="" />
+            <span class="title" style="left: 33% !important;">user profile</span>
+            <img src="images/header-right.png" class="right" alt="" />
+        </div>
+
+        <div class="mobile-grid-100 padd0 offer-banner" id="user_banner_img">
+            <img src="" id="user_profile_img" class="user-image user_profile_img user_profile_pic">
+            <img src="images/write-msg-icon.png" class="write-msg-icon" id="user1">
+        </div>
+
+        <div class="mobile-grid-100 padd0 blc">
+            <div class="mobile-grid-50">
+                <p class="name user_name"></p>
+            </div>
+            <div class="mobile-grid-50 blk public_profile_block">
+                <img src="images/follow-btn.png" class="follow-btn follow_user" id="follow_button"><br>
+                <img src="images/chat-btn.png" class="chat-btn chat_user">
+            </div>
+        </div>
+
+        <div class="mobile-grid-100 padd0 follow-block">
+            <div class="mobile-grid-50 followers">
+                <p class="follow">followers</p>
+                <p class="number follower_count"></p>
+            </div>
+            <div class="mobile-grid-50 following">
+                <p class="follow">following</p>
+                <p class="number following_count"></p>
+            </div>
+        </div>
+        <div class="mobile-grid-100 user-profile-bottom">
+            <hr/>
+        </div><br>
+
+        <div class="mobile-grid-100 padd0 user_form1">
+            <div class="mobile-grid-100 shopper-name">
+                <input type="text" name="name" placeholder="Name" class="txt user_edit_name">
+            </div>
+            <div class="mobile-grid-100 shopper">
+                <input type="text" name="email" placeholder="Email ID" class="txt user_edit_email">
+            </div>
+            <div class="mobile-grid-100 shopper">
+                <select class="txt selct-box user_edit_city">
+                    <option value="">Select City</option>
+                </select>
+            </div>
+            <div class="mobile-grid-100 shopper">
+                <select class="txt selct-box user_edit_location">
+                    <option value="">Neighbourhood[Loation]</option>
+                </select>
+            </div>
+            <div class="mobile-grid-100 shopper">
+                <select class="txt selct-box user_edit_gender">
+                              <option value="">Select Gender</option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                 </select>
+            </div>
+            <div class="mobile-grid-100 shopper">
+                <input type="text" name="dob" placeholder="DOB" class="txt-dob user_edit_dob" id="datepicker4">
+                <img src="images/date-picker.png" class="picker">
+            </div>
+            <div style="position:relative;" class="mobile-grid-100 upload-img">
+				<div class="txt_box anime_bx" onclick="get_image_from_device_profile(Camera.PictureSourceType.SAVEDPHOTOALBUM)">
+                    <span class="camera_text" id="galleryImageProfile">Gallery</span>
+                </div>
+                <img src="images/upload-icon.png" class="up_load3" onclick="get_image()">
+				<div class="txt_box1 anime_bx" onclick="get_image_from_device_profile(Camera.PictureSourceType.CAMERA)">
+                    <span class="camera_text1" id="cameraImageProfile">Camera</span>
+                </div>
+            </div>
+            <input type="hidden" name="profile-img-name" class="txt profile_img_name" value="">
+
+            <div onclick="update_profile()" class="mobile-grid-100 brand-update-btn user_edit_profile">update</div>
+        </div><br>
+
+
+
+    <!--footer-->
+       <div class="mobile-grid-100 padd0 footer bord-top">
+          <div class="mobile-grid-25 flag">
+            <img src="images/flag-icon.png">
+          </div>
+          <div class="mobile-grid-25 camera">
+            <img src="images/camera-icon.png">
+          </div>
+          <div class="mobile-grid-25 chat-msg">
+            <img src="images/chat-msg-icon.png">
+          </div>
+          <div class="mobile-grid-25 globe">
+            <img src="images/globe-icon.png">
+          </div>
+        </div>
+    <!--footer end-->
+        <script src="js/menu.js" type="text/javascript"></script> 
+        <script src="js/jquery.stellar.js" type="text/javascript"></script> 
+		<script type="text/javascript">
+			$(window).stellar();
+			$('document').ready(function () {
+				$(".up_load3").click(function() {
+					var $minWidth = 100;
+					curWidth = $('.anime_bx').width();
+					if ( curWidth < $minWidth) {
+						$('.anime_bx').animate({ "width": "100px" });
+					}else{
+						$('.anime_bx').animate({ "width": "0" });
+					}
+				});
+			});
+		</script>

@@ -1,0 +1,145 @@
+<div class="header mobile-grid-100">
+  <img src="images/menu-btn.png" class="menu_click menu-open" alt="" />
+  <span class="title" style="left:36% !important;">register</span>
+  <img src="images/header-right.png" class="right" alt="" />
+</div>
+<div class="mobile-grid-100 shopper-title">
+  <p>buisness</p>
+</div>
+<div class="mobile-grid-100 shopper-name">
+  <input type="text" name="name" placeholder="Name" class="txt shopper_name1">
+</div>
+<div class="mobile-grid-100 shopper-name">
+  <input type="text" name="bname" placeholder="Buisness Name" class="txt mt-5 business_name1">
+</div>
+<div class="mobile-grid-100 shopper">
+  <input type="text" name="email" placeholder="Email ID" class="txt shopper_email1">
+</div>
+<div class="mobile-grid-100 shopper">
+    <input type="password" name="password" placeholder="Password" class="txt password1">
+</div>
+<div class="mobile-grid-100 shopper">
+  <input type="password" name="confirm-password" placeholder="Confirm Password" class="txt confirm_password1">
+</div>
+<div class="mobile-grid-100 shopper">
+  <select class="txt selct-box shopper_city1">
+    <option value="">Select City</option>
+  </select>
+</div>
+<div class="mobile-grid-100 shopper">
+  <select class="txt selct-box shopper_location1">
+      <option value="">Neighbourhood[Loation]</option>
+  </select>
+</div>
+<div class="mobile-grid-100 shopper">
+    <select class="txt selct-box shopper_gender1">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+</div>
+<div class="mobile-grid-100 padd0">
+    <select id="multi" multiple="multiple" class="shopper_category1">
+      <option value="1">Cloathing</option>
+      <option value="12">Shoes</option>
+      <option value="1">Accessories</option>
+      <option value="12">Jewelery</option>
+      <option value="1">Home &amp; Living</option>
+      <option value="12">Beauty and Groming</option>
+      <option value="12">Food and Drink</option>
+      <option value="12">Grocery</option>
+      <option value="12">Reality </option>
+      <option value="12">Travel</option>
+      <option value="12">Finance </option>
+      <option value="12">Utility </option>
+  </select>
+</div>
+
+<!--      <div class="mobile-grid-100 category ">
+                        <p>category?</p>
+                        <div class="checkbox">
+                            <div class="mobile-grid-33">
+                                <input id="test11" type="checkbox" name="check">
+                                <label for="test11" class="chec">Cloathing</label>
+                            </div>
+                            <div class="mobile-grid-33">
+                                <input id="test12" type="checkbox" name="check">
+                                <label for="test12" class="chec">Shoes</label>
+                            </div>
+                            <div class="mobile-grid-33">
+                                <input id="test13" type="checkbox" name="check">
+                                <label for="test13" class="chec">Accessories</label>
+                            </div><br><br>
+                            <div class="mobile-grid-30">
+                                <input id="test14" type="checkbox" name="check">
+                                <label for="test14" class="chec">Jewelery</label>
+                            </div>
+                            <div class="mobile-grid-55 ch">
+                                <input id="test15" type="checkbox" name="check">
+                                <label for="test15" class="chec">Home&Living</label>
+                            </div><br><br>
+                            <div class="mobile-grid-60">
+                                <input id="test16" type="checkbox" name="check">
+                                <label for="test16" class="chec">Beauty and Groming</label>
+                            </div>
+                        </div>
+                    </div> -->
+<div style="position:relative;" class="mobile-grid-100 upload-img">
+    <div class="txt_box anime_bx">
+        <span class="camera_text" onclick="get_image()">Gallery</span>
+    </div>
+    <img src="images/upload-icon.png" class="up_load1" onclick="get_image()">
+    <div class="txt_box1 anime_bx">
+        <span class="camera_text1" onclick="get_image()">Camera</span></div>
+</div>
+
+<!--<input type="hidden" name="user-type"class="txt user_type" value="Bussiness">-->
+<input type="hidden" name="profile-img-name" class="txt profile_img_name" value="">
+
+<div id="register_business" class="mobile-grid-100 register-btn bt">register</div>
+<div class="mobile-grid-100 reset-btn ">reset</div><br><br>
+
+
+
+<!--footer-->
+<div class="mobile-grid-100 padd0 footer">
+    <div class="mobile-grid-25 flag">
+        <img src="images/flag-icon.png">
+    </div>
+    <div class="mobile-grid-25 camera">
+        <img src="images/camera-icon.png">
+    </div>
+    <div class="mobile-grid-25 chat-msg">
+        <img src="images/chat-msg-icon.png">
+    </div>
+    <div class="mobile-grid-25 globe">
+        <img src="images/globe-icon.png">
+    </div>
+</div>
+<!--footer end-->
+
+
+<script src="js/menu.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $('document').ready(function() {
+
+        $(".up_load1").click(function() {
+
+            var $minWidth = 100;
+            curWidth = $('.anime_bx').width();
+
+            if (curWidth < $minWidth) {
+                $('.anime_bx').animate({
+                    "width": "100px"
+                });
+            } else {
+                $('.anime_bx').animate({
+                    "width": "0"
+                });
+            }
+
+        });
+
+    });
+</script>

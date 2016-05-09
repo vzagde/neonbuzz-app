@@ -1,0 +1,219 @@
+<div class="header bottom-border mobile-grid-100">
+    <img src="images/menu-btn.png" class="menu_click menu-open" alt="" />
+    <span class="title">Buzz</span>
+    <img src="images/header-right.png" class="right" alt="" />
+</div>
+<div class="mobile-grid-100 create-buzz">
+    <img src="images/buzz-icon.png">create buzz
+</div>
+<div class="mobile-grid-100 padd0 buzz_wrapper">
+    <!-- 
+        <div class="mobile-grid-100 padd0 offer-banner buzz-banner">
+            <img src="images/offer-banner.png" class="offer-banner-block buzz-banner-block">
+            <div class="mobile-grid-33 offer-left">
+                <img src="images/offer-left.png" class="offer-left-img">
+                <p>Jacket</p><br>
+                <span>ABC</span>
+            </div>
+            <div class="mobile-grid-33">
+                <img src="images/buzz-right.png" class="offer-right" id="p1">
+                <img src="images/delete-icon.png" class="delete-icon" id="d1">
+                <img src="images/reverse-icon.png" class="reverse-icon" id="f1">
+                <img src="images/feed-heart.png" class="offer-heart">
+            </div>
+        </div>
+        
+        <div class="mobile-grid-100 padd0 offer-banner buzz-banner">
+            <img src="images/offer-banner-2.png" class="offer-banner-block buzz-banner-block">
+            <div class="mobile-grid-33 offer-left">
+                <img src="images/offer-left.png" class="offer-left-img">
+                <p>Jacket</p><br>
+                <span>ABC</span>
+            </div>
+            <div class="mobile-grid-33">
+                <img src="images/buzz-right.png" class="offer-right" id="p2">
+                <img src="images/delete-icon.png" class="delete-icon" id="d2">
+                <img src="images/reverse-icon.png" class="reverse-icon" id="f2">
+                <img src="images/feed-heart.png" class="offer-heart">
+            </div>
+        </div>
+
+        <div class="mobile-grid-100 padd0 offer-banner buzz-banner">
+            <img src="images/offer-banner.png" class="offer-banner-block buzz-banner-block">
+            <div class="mobile-grid-33 offer-left">
+                <img src="images/offer-left.png" class="offer-left-img">
+                <p>Jacket</p><br>
+                <span>ABC</span>
+            </div>
+            <div class="mobile-grid-33">
+                <img src="images/buzz-right.png" class="offer-right" id="p3">
+                <img src="images/delete-icon.png" class="delete-icon" id="d3">
+                <img src="images/reverse-icon.png" class="reverse-icon" id="f3">
+                <img src="images/feed-heart.png" class="offer-heart">
+            </div>
+        </div>
+
+        <div class="mobile-grid-100 padd0 offer-banner buzz-banner">
+            <img src="images/offer-banner-2.png" class="offer-banner-block buzz-banner-block">
+            <div class="mobile-grid-33 offer-left">
+                <img src="images/offer-left.png" class="offer-left-img">
+                <p>Jacket</p><br>
+                <span>ABC</span>
+            </div>
+            <div class="mobile-grid-33">
+                <img src="images/buzz-right.png" class="offer-right" id="p4">
+                <img src="images/delete-icon.png" class="delete-icon" id="d4">
+                <img src="images/reverse-icon.png" class="reverse-icon" id="f4">
+                <img src="images/feed-heart.png" class="offer-heart">
+            </div>
+        </div>
+ -->
+</div>
+<br><br>
+
+
+<!--Footer-->
+<div class="mobile-grid-100 padd0 footer bord-top">
+    <div class="mobile-grid-25 flag">
+        <img src="images/flag-icon.png">
+    </div>
+    <div class="mobile-grid-25 camera">
+        <img src="images/camera-icon.png">
+    </div>
+    <div class="mobile-grid-25 chat-msg">
+        <img src="images/chat-msg-icon.png">
+    </div>
+    <div class="mobile-grid-25 globe">
+        <img src="images/globe-icon.png">
+    </div>
+</div>
+<!--Footer end-->
+
+
+<!--buzz popup-->
+<div class="mobile-grid-100 padd0 overlay" style="display:none;">
+    <div class="popup-buzz padd0 mobile-grid-90 mobile-prefix-5">
+        <div class="mobile-grid-100 padd0 popup-title">
+            <p>create buzz</p>
+            <img src="images/close.png" class="close-buzz">
+        </div>
+        <div class="title-bottom mobile-grid-80 padd0 mobile-prefix-10"></div>
+        <div style="position:relative;" class="mobile-grid-100 padd0 upload-img">
+            <div style="top:0;" class="txt_box anime_bx">
+                <span class="camera_text" onclick="get_image()">Gallery</span>
+            </div>
+            <img src="images/upload-icon.png" class="upld up_load2">
+            <div style="top:0;" class="txt_box1 anime_bx"><span class="camera_text1" onclick="get_image()">Camera</span></div>
+        </div>
+        <div class="mobile-grid-90 padd0 mobile-prefix-5">
+            <input type="text" name="name" placeholder="ENTER TAGS" class="banner-txt buzz_tags">
+        </div>
+        <div class="mobile-grid-90 padd0 mobile-prefix-5">
+            <textarea name="desc" cols="80" rows="10" placeholder="say something about this photo......" class="popup-text buzz-textarea buzz_desc"></textarea>
+            <img src="images/smile.png" class="smile">
+            <!--<img src="images/attachment.png" class="attachment">-->
+        </div>
+
+
+        <div class="mobile-grid-100 padd0">
+            <select id="multi1" multiple="multiple" style="width: 97% !important;margin-top: 3%;" class="buzz_category">
+            <option value="1">Cloathing</option>
+            <option value="12">Shoes</option>
+            <option value="1">Accessories</option>
+            <option value="12">Jewelery</option>
+            <option value="1">Home &amp; Living</option>
+            <option value="12">Beauty and Groming</option>
+            <option value="12">Food and Drink</option>
+            <option value="12">Grocery</option>
+            <option value="12">Reality </option>
+            <option value="12">Travel</option>
+            <option value="12">Finance </option>
+            <option value="12">Utility </option>
+
+        </select>
+        </div>
+
+
+
+
+        <!--      <div class="mobile-grid-100 category ">
+                            <p class="pop">category?</p>
+                            <div class="checkbox">
+                                <div class="mobile-grid-33">
+                                    <input id="test1" type="checkbox" name="check">
+                                    <label for="test1" class="chec">Cloathing</label>
+                                </div>
+                                <div class="mobile-grid-33">
+                                    <input id="test2" type="checkbox" name="check">
+                                    <label for="test2" class="chec">Shoes</label>
+                                </div>
+                                <div class="mobile-grid-33">
+                                    <input id="test3" type="checkbox" name="check">
+                                    <label for="test3" class="chec">Accessories</label>
+                                </div><br><br>
+                                <div class="mobile-grid-30">
+                                    <input id="test4" type="checkbox" name="check">
+                                    <label for="test4" class="chec">Jewelery</label>
+                                </div>
+                                <div class="mobile-grid-55 ch">
+                                    <input id="test5" type="checkbox" name="check">
+                                    <label for="test5" class="chec">Home&Living</label>
+                                </div><br><br>
+                                <div class="mobile-grid-60">
+                                    <input id="test6" type="checkbox" name="check">
+                                    <label for="test6" class="chec">Beauty and Groming</label>
+                                </div>
+                            </div>
+                        </div> -->
+
+        <div class="mobile-grid-50">
+            <input type="date" id="datepicker2" name="bname" placeholder="Start Date" class="txt mt-5 buzz_start_date">
+        </div>
+        <div class="mobile-grid-50">
+            <input type="time" name="bname" placeholder="Start Time" class="txt mt-5 buzz_start_time">
+        </div>
+        <div class="mobile-grid-50">
+            <input type="date" id="datepicker3" name="bname" placeholder="End Date" class="txt mt-5 buzz_end_date" style="margin-bottom : 10px;">
+        </div>
+        <div class="mobile-grid-50">
+            <input type="time" name="bname" placeholder="End Time" class="txt mt-5 buzz_end_time" style="margin-bottom : 10px;">
+        </div>
+        <input type="hidden" name="profile-img-name" class="txt profile_img_name" value="">
+        <div id="buzz_submit" class="mobile-grid-100  sbmt-btn mar">submit</div>
+    </div>
+
+</div>
+
+<!--buzz popup end-->
+
+<script src="js/menu.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $('document').ready(function() {
+
+        $(".up_load2").click(function() {
+
+            var $minWidth = 100;
+            curWidth = $('.anime_bx').width();
+
+            if (curWidth < $minWidth) {
+                $('.anime_bx').animate({
+                    "width": "100px"
+                });
+            } else {
+                $('.anime_bx').animate({
+                    "width": "0"
+                });
+            }
+        });
+
+    });
+
+    $('.create-buzz').click(function(event) {
+        $('.overlay').show();
+    });
+
+    $('.close-buzz').click(function(event) {
+        $('.overlay').show();
+    });
+</script>

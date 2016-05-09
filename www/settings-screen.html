@@ -1,0 +1,117 @@
+<div style="border-bottom:1px solid #000 !important;" class="header bottom-border feed-header mobile-grid-100">
+    <img src="images/menu-btn.png" class="menu_click menu-open" alt="" />
+    <span class="feed-title">create feed</span>
+    <img src="images/header-right.png" class="right" alt="" />
+</div>
+
+<div class="mobile-grid-100 setting_wrapper">
+	<p class="setting_text1">Account Settings</p>
+	<div class="setting_box mobile-grid-100">
+		<div class="setting mobile-grid-100 padd0">
+			<div class="setting_sub1 mobile-grid-100">
+				<p class="setting_text2">Followers <img src="images/right_arrow.png" class="right_arrow" alt="" /></p>
+			</div>
+			<div class="setting_sub2 mobile-grid-100">
+				<p class="setting_text3"><input type="radio" class="setting_radio followers_setting" name="followers" checked value="only_me"> Only me</p>
+				<p class="setting_text3"><input type="radio" class="setting_radio followers_setting" name="followers" value="followers"> Followers only</p>
+				<p class="setting_text3"><input type="radio" class="setting_radio followers_setting" name="followers" value="all"> Everyone</p>
+			</div>	
+		</div>
+		<div class="setting mobile-grid-100 padd0">
+			<div class="setting_sub1 mobile-grid-100">
+				<p class="setting_text2">Following <img src="images/right_arrow.png" class="right_arrow" alt="" /></p>
+			</div>
+			<div class="setting_sub2 mobile-grid-100">
+				<p class="setting_text3"><input type="radio" class="setting_radio following_setting" name="following" checked value="only_me"> Only me</p>
+				<p class="setting_text3"><input type="radio" class="setting_radio following_setting" name="following" value="followers"> Followers only</p>
+				<p class="setting_text3"><input type="radio" class="setting_radio following_setting" name="following" value="all"> Everyone</p>
+			</div>	
+		</div>
+		<div class="setting1 mobile-grid-100 padd0">
+			<div style="position:relative;" class="setting_sub1 mobile-grid-100">
+				<p class="setting_text2">Push Notification </p>
+				<div class="push_box">
+					<div class="onoffswitch">
+						<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox push_notif" id="myonoffswitch">
+						<label class="onoffswitch-label" for="myonoffswitch">
+							<span class="onoffswitch-inner"></span>
+							<span class="onoffswitch-switch"></span>
+						</label>
+					</div>
+				</div>	
+			</div>	
+		</div>
+		<div class="setting mobile-grid-100 padd0">
+			<div class="setting_sub1 mobile-grid-100">
+				<p class="setting_text2">Change Password <img src="images/right_arrow.png" class="right_arrow" alt="" /></p>
+			</div>
+			<div style="padding:5% !important;" class="setting_sub2 mobile-grid-100">
+				<input type="password" class="pass_word old_pass" placeholder="Old Pasword" name="pwd">
+				<input type="password" class="pass_word new_pass" placeholder="New Pasword" name="pwd">
+				<div class="mobile-grid-100">
+					<input type="submit" class="sub_mit change_pass" value="Submit">
+				</div>	
+			</div>	
+		</div>
+	</div>
+	
+	<p style="margin-top:10%;" class="setting_text1">Get Help</p>
+	<div class="setting_box mobile-grid-100">
+		<div class="setting mobile-grid-100 padd0">
+			<div class="setting_sub1 mobile-grid-100">
+				<p class="setting_text2">Contact Us <img src="images/right_arrow.png" class="right_arrow" alt="" /></p>
+			</div>
+			<div class="setting_sub2 mobile-grid-100">
+				<p class="setting_text3">+91 9909980988</p>
+				<p class="setting_text3">+91 8430028257</p>
+				<p class="setting_text3">+91 9233938274</p>
+			</div>	
+		</div>
+	</div>
+</div>
+
+<div class="mobile-grid-100">
+	<input type="submit" class="sub_mit apply_settings" value="Apply">
+</div>
+
+
+<!--footer-->
+<div class="mobile-grid-100 padd0 footer">
+    <div class="mobile-grid-25 flag">
+        <img src="images/flag-icon.png">
+    </div>
+    <div class="mobile-grid-25 camera">
+        <img src="images/camera-icon.png">
+    </div>
+    <div class="mobile-grid-25 chat-msg">
+        <img src="images/chat-msg-icon.png">
+    </div>
+    <div class="mobile-grid-25 globe">
+        <img src="images/globe-icon.png">
+    </div>
+</div>
+<!--footer end-->
+
+<script src="js/menu.js" type="text/javascript"></script> 
+<script src="js/jQueryRotate.js" type="text/javascript"></script> 
+<script type="text/javascript">
+
+	$('.setting_sub1').click(function(){
+		
+		var $minHeight = 49;
+		var el = $(this).parent();
+		
+		curHeight = el.height(),
+		autoHeight = el.css('height', 'auto').height();
+		
+		if ( curHeight < $minHeight) {
+			el.height(curHeight).animate({height: autoHeight});
+			$(this).find('.right_arrow').rotate({animateTo:90});
+		}else{
+			el.animate({ "height": "49px" });
+			$(this).find('.right_arrow').rotate({animateTo:0});
+		}
+	
+	});
+
+</script>

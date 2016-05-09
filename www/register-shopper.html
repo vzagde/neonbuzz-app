@@ -1,0 +1,91 @@
+<div class="header mobile-grid-100">
+    <img src="images/menu-btn.png" class="menu_click menu-open" alt="" />
+    <span class="title" style="left:36% !important;">register</span>
+    <img src="images/header-right.png" class="right" alt="" />
+</div>
+<div class="mobile-grid-100 shopper-title">
+    <p>shopper</p>
+</div>
+<div class="mobile-grid-100 shopper-name">
+    <input type="text" name="name" placeholder="Name" class="txt shopper_name">
+</div>
+<div class="mobile-grid-100 shopper">
+    <input type="text" name="email" placeholder="Email ID" class="txt shopper_email">
+</div>
+<div class="mobile-grid-100 shopper">
+    <input type="password" name="password" placeholder="Password" class="txt password">
+</div>
+<div class="mobile-grid-100 shopper">
+    <input type="password" name="confirm-password" placeholder="Confirm Password" class="txt confirm_password">
+</div>
+<div class="mobile-grid-100 shopper shopper-city">
+    <select class="txt selct-box shopper_city">
+        <option value="">Select City</option>
+    </select>
+</div>
+<div class="mobile-grid-100 shopper">
+    <select class="txt selct-box shopper_location">
+        <option value="">Neighbourhood[Loation]</option>
+    </select>
+</div>
+<div class="mobile-grid-100 shopper">
+    <select class="txt selct-box shopper_gender">
+      <option value="">Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+</div>
+<div class="mobile-grid-100 shopper">
+    <input type="date" name="dob" placeholder="DOB" class="txt-dob shopper_dob" id="datepicker">
+    <img src="images/date-picker.png" class="picker">
+</div>
+<div style="position:relative" class="mobile-grid-100 upload-img">
+    <div class="txt_box anime_bx"><span class="camera_text" onclick="get_image()">Gallery</span></div>
+    <img src="images/upload-icon.png" class="up_load" onclick="get_image()">
+    <div class="txt_box1 anime_bx"><span class="camera_text1" onclick="get_image()">Camera</span></div>
+</div>
+<input type="hidden" name="profile-img-name" class="txt profile_img_name" value="">
+
+<div id="register_user" class="mobile-grid-100 register-btn">register</div>
+<div class="mobile-grid-100 reset-btn ">reset</div><br><br>
+
+<!--footer-->
+<div class="mobile-grid-100 padd0 footer">
+    <div class="mobile-grid-25 flag">
+        <img src="images/flag-icon.png">
+    </div>
+    <div class="mobile-grid-25 camera">
+        <img src="images/camera-icon.png">
+    </div>
+    <div class="mobile-grid-25 chat-msg">
+        <img src="images/chat-msg-icon.png">
+    </div>
+    <div class="mobile-grid-25 globe">
+        <img src="images/globe-icon.png">
+    </div>
+</div>
+<!--footer end-->
+
+
+<script type="text/javascript">
+    $('document').ready(function() {
+
+        $(".up_load").click(function() {
+
+            var $minWidth = 100;
+            curWidth = $('.anime_bx').width();
+
+            if (curWidth < $minWidth) {
+                $('.anime_bx').animate({
+                    "width": "100px"
+                });
+            } else {
+                $('.anime_bx').animate({
+                    "width": "0"
+                });
+            }
+
+        });
+
+    });
+</script>

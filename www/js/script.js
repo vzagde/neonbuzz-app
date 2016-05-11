@@ -2,7 +2,7 @@ var base_url = 'http://casaestilo.in/neonbuzz_admin/index.php/api';
 var image_url = 'http://casaestilo.in/neonbuzz_admin/upload_image/profile_pic';
 
 var user_data = '';
-var followes = '';
+var followers = '';
 var followings = '';
 var uploaded_image = '';
 var chk_user_type = '';
@@ -54,7 +54,7 @@ $(".continueapp-btn").click(function(){
 
     if (token) {
         token = token;
-        alert(token);
+        // alert(token);
         $.ajax({
             url : base_url+'/get_user_data',
             type : 'POST',
@@ -64,7 +64,7 @@ $(".continueapp-btn").click(function(){
                 var obj = JSON.parse(response);
                 var image = '';
                 user_data = obj.data;
-                followes =  obj.followers; 
+                followers =  obj.followers; 
                 followings = obj.followings;
                 if (user_data.medium == 'facebook') {
                     image = obj.data.image;
@@ -190,9 +190,9 @@ function display_brandprofileData(image, user_data, type, followers, followings)
 
 $(".flag").click(function(){
     if (user_data.user_type == 'Shopper') {
-        displayOffers();
-    } else {
         displayBuzz();
+    } else {
+        displayOffers();
     }
 })
 
@@ -203,6 +203,7 @@ $(".camera").click(function(){
 
 $(".close-buzz").click(function(){
     $(".popup-buzz").hide();
+    $(".overlay").hide();
 })
 
 function facebook_login(){
@@ -835,6 +836,7 @@ $("#register_user").click(function(){
                     followers = obj.followers;
                     followings = obj.followings;
                     user_data = obj.data;
+                    Lockr.set("user_token", user_data.id);
                     if (obj.status == 'Success') {
                         uploaded_image = '';
                         $(".main-section").hide();
@@ -890,6 +892,7 @@ $("#register_business").click(function(){
                     followers = obj.followers;
                     followings = obj.followings;
                     user_data = obj.data;
+                    Lockr.set("user_token", user_data.id);
                     if (obj.status == 'Success') {
                         $(".main-section").hide();
                         $("#thankyou").show();

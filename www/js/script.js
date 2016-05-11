@@ -12,22 +12,7 @@ var profileToId = '';
 var sender_img = '';
 var reciever_img = '';
 openFB.init('1709189259297910', '', window.localStorage);
-// var token = '';
-
-// var token = Lockr.get('user_token');
-
-// console.log(token);
-
-// $.ajax({
-//     url: base_url + "/get_user_detail",
-//     dataType: "json",
-//     type: "POST",
-//     async: false,
-//     data: { 'token': token, },
-//     success: function(data) {
-//         console.log(data);
-//     }
-// });
+var token = '';
 
 $.ajax({
     url: base_url + "/city",
@@ -65,7 +50,49 @@ $(".shopper_city, .shopper_city1").change(function(){
 
 $(".continueapp-btn").click(function(){
     $(".main-section").hide();
-    $("#login").show();
+    token = Lockr.get('user_token');
+
+    if (token) {
+        token = token;
+        alert(token);
+        $.ajax({
+            url : base_url+'/get_user_data',
+            type : 'POST',
+            async : false,
+            data : { user_id : token, },
+            success : function(response){
+                var obj = JSON.parse(response);
+                var image = '';
+                user_data = obj.data;
+                followes =  obj.followers; 
+                followings = obj.followings;
+                if (user_data.medium == 'facebook') {
+                    image = obj.data.image;
+                } else {
+                    image = image_url+"/"+obj.data.image+".jpg";
+                }
+
+                var type = 'visitor';
+
+                if (obj.data.id == user_data.id) {
+                    type = 'user';
+                }
+                display_profileData(image, obj.data.id, type, obj.followers.length, obj.followings.length);
+                $(".main-section").hide();
+                $("#user-profile").show();
+            }
+        })
+    } else {
+        console.log("Do Not have Token");
+        token = 'NOIDEA';
+        console.log(token);
+    }
+
+    if (token == 'NOIDEA') {
+        $("#login").show();
+    } else {
+        displayFeed();
+    }
 })
 
 $("#login_user").click(function(){
@@ -86,9 +113,10 @@ $("#login_user").click(function(){
                 followers = obj.followers;
                 followings = obj.followings;
                 user_data = obj.data;
+                Lockr.set("user_token", user_data.id)
                 if (obj.status == 'Success') {
                     $(".main-section").hide();
-                    $("#thankyou").show();
+                    displayFeed();
                     get_notification_count();
                 }
             }
@@ -98,6 +126,7 @@ $("#login_user").click(function(){
 
 $(".update-btn, #uprofile-page").click(function(){
     $(".main-section").hide();
+    console.log(user_data);
     if (user_data.user_type == 'Shopper') {
         var image = '';
         if (user_data.medium == 'facebook') {
@@ -117,6 +146,7 @@ $(".update-btn, #uprofile-page").click(function(){
         display_brandprofileData(image, user_data, 'user', followers.length, followings.length);
         $("#brand-profile").show();
     }
+    $('.menu').fadeOut('slow');
 })
 
 function display_profileData(image, id, type, followers, followings){
@@ -159,16 +189,20 @@ function display_brandprofileData(image, user_data, type, followers, followings)
 
 
 $(".flag").click(function(){
-    displayFeed();
-
-})
-
-$(".camera").click(function(){
     if (user_data.user_type == 'Shopper') {
         displayOffers();
     } else {
         displayBuzz();
     }
+})
+
+$(".camera").click(function(){
+    $(".main-section").hide();
+    $("#create-feed").show();
+})
+
+$(".close-buzz").click(function(){
+    $(".popup-buzz").hide();
 })
 
 function facebook_login(){
@@ -307,6 +341,7 @@ function displayOffers(){
                     success : function(response){
                         var obj = JSON.parse(response);
                         var image = '';
+                        user_data = obj.data;
                         if (user_data.medium == 'facebook') {
                             image = obj.data.image;
                         } else {
@@ -446,14 +481,14 @@ $("#buzz_submit").click(function(){
         alert("Please Enter Description");
     } else if (!$(".buzz_category").val()) {
         alert("Please Select Category");
-    } else if (!$(".buzz_start_date").val()) {
-        alert("Please Select Start Date");
-    } else if (!$(".buzz_start_time").val()) {
-        alert("Please Select Start Time");
-    } else if (!$(".buzz_end_date").val()) {
-        alert("Please Select End Date");
-    } else if (!$(".buzz_end_time").val()) {
-        alert("Please Select End Time");
+    // } else if (!$(".buzz_start_date").val()) {
+    //     alert("Please Select Start Date");
+    // } else if (!$(".buzz_start_time").val()) {
+    //     alert("Please Select Start Time");
+    // } else if (!$(".buzz_end_date").val()) {
+    //     alert("Please Select End Date");
+    // } else if (!$(".buzz_end_time").val()) {
+    //     alert("Please Select End Time");
     } else if (uploaded_image == '') {
         alert("Please Upload Image");
     } else {
@@ -629,6 +664,7 @@ $('#feed_submit').click(function() {
 })
 
 function displayFeed(){
+    console.log(user_data);
     $(".main-section").hide();
     $.ajax({
         url : base_url+'/get_feeds',
@@ -636,6 +672,7 @@ function displayFeed(){
         async : false,
         data : { token : user_data.token },
         success : function(response){
+            console.log(response);
             var obj = JSON.parse(response);
             console.log(obj);
             var html = '';
@@ -1263,12 +1300,14 @@ function onSuccess(imgUri) {
         $(".feed-header").css("background-size", "cover");
         $(".upload_image_banner").addClass("upload_new_image_banner");
         $(".camer_box").hide();
+        alert("Image Uploaded Successfully");
     }
 
     function onErrorf(error) {
         console.log("An error has occurred: Code = " + error.code);
         console.log("upload error source " + error.source);
         console.log("upload error target " + error.target);
+        alert("Some Error Occured While image upload please try again");
     }
 }
 
@@ -1607,6 +1646,7 @@ $("#offer-page").click(function(){
 
 $("#show-buzz").click(function(){
     displayBuzz();
+    $('.menu').fadeOut('slow');
 })
 
 function get_notification_count() {
